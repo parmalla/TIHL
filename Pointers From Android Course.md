@@ -5,4 +5,12 @@ Vector Drawables are usable from API 19. Use support libraries to make them usab
    ```kotlin
    vectorDrawables.useSupportLibrary = true
    ```
----
+- You’ll also need to add the namespace to the root of the layout:
+   ```XML
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   ```
+- Use app:srcCompat in the image tag in the layout file:
+   ```XML
+   app:srcCompat="@drawable/empty_dice"
+   ```
+ ---
