@@ -11,11 +11,23 @@ Vector Drawables are usable from API 19. Use support libraries to make them usab
    ```
 - Use app:srcCompat in the image tag in the layout file:
    ```XML
-   app:srcCompat="@drawable/empty_dice"
+   app:srcCompat="@drawable/image_tag"
    ```
  ---
 Always refactor when renaming a view or resource so that all references are changed in the code.
-  - Right-click > Refactor > Rename  
+```
+Right-click > Refactor > Rename
+```
 ---
-
+Reformat the code for better reading experience
+   ```
+   Reformat Code: Ctrl+Alt+L
+   ```
+---
+In your click handler, add this code to hide the keyboard after input is complete
+```Kotlin
+val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+imm.hideSoftInputFromWindow(view.windowToken, 0)
+```
+---
    
