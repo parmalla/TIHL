@@ -14,3 +14,8 @@ Vector Drawables are usable from API 19. Use support libraries to make them usab
    app:srcCompat="@drawable/empty_dice"
    ```
  ---
+Always refactor when renaming a view or resource so that all references are changed in the code.
+  - Right-click > Refactor > Rename  
+---
+
+   
