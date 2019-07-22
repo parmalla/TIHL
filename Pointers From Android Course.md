@@ -32,4 +32,44 @@ imm.hideSoftInputFromWindow(view.windowToken, 0)
 ---
 [Data Binding Library](https://developer.android.com/topic/libraries/data-binding) helps us to reduce the overhead caused by *findViewById()*.
 >The Data Binding Library is a support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
-   
+---
+Steps to use data binding to replace calls to findViewById(): 
+1. Enable data binding in the android section of the build.gradle file:
+   ```kotlin
+   dataBinding { enabled = true }
+   ```
+2. Use <layout> as the root view in your XML layout.
+3. Define a binding variable: 
+   ```kotlin
+   private lateinit var binding: ActivityMainBinding
+   ``` 
+4. Create a binding object in MainActivity, replacing setContentView:
+   ```kotlin
+   binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+   ``` 
+5. Replace calls to findViewById() with references to the view in the binding object.  
+
+Steps for binding views to data:
+1. Create a data class for your data.
+2. Add a <data> block inside the <layout> tag.
+3. Define a <variable> with a name, and a type that is the data class.
+   ```XML
+   <data>
+    <variable
+       name="myName"
+       type="com.example.android.aboutme.MyName" />
+   </data>
+   ```
+4. In MainActivity, create a variable with an instance of the data class. For example: 
+   ```kotlin
+   private val myName: MyName = MyName("Jon Doe")
+   ``` 
+5. In the binding object, set the variable to the variable you just created: 
+   ```kotlin
+   binding.myName = myName
+   ``` 
+6. In the XML, set the content of the view to the variable that you defined in the <data> block. Use dot notation to access the data inside the data class.
+   ```XML
+   android:text="@{myName.name}"
+   ``` 
+---
