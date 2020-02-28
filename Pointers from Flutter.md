@@ -32,4 +32,13 @@ class MyApp extends StatelessWidget {   //The app extends StatelessWidget which 
 3. In lib/main.dart, import the new package.
 ---
 ##### [Add a Stateful Widget](https://flutter.dev/docs/get-started/codelab#step-3-add-a-stateful-widget)
-
+Stateless widgets are immutable, meaning that their properties can’t change—all values are final.
+Stateful widgets maintain state that might change during the lifetime of the widget. Implementing a stateful widget requires at least two classes:
+1. a **StatefulWidget** class that creates an instance of  
+2. a **State** class. The **StatefulWidget** class is, itself, immutable, but the **State** class persists over the lifetime of the widget.
+---
+##### [Tips](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
+1.  In Flutter's reactive style framework, calling **setState()** triggers a call to the **build()** method for the State object, resulting in an update to the UI.
+2.  Some widget properties take a single widget (**child**), and other properties, such as action, take an array of widgets (**children**), as indicated by the square brackets (**[]**).
+---
+[Curated list of Sample apps](https://github.com/flutter/samples/blob/master/INDEX.md)
