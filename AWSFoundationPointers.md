@@ -83,3 +83,51 @@ for feature in df.columns[:-1]:
 ### Efficient Code
 
 ![Optimising](/Images/Optimising.jpg)
+
+------
+
+### Convert string to int in numpy
+
+```python
+with open('gift_costs.txt') as f:
+    gift_costs = f.read().split('\n')
+    
+gift_costs = np.array(gift_costs).astype(int)  # convert string to int
+```
+
+### Optimising
+
+Reducing time through numpy condition selection.
+
+```python
+start = time.time()
+
+total_price = 0
+for cost in gift_costs:
+    if cost < 25:
+        total_price += cost * 1.08  # add cost after tax
+
+print(total_price)
+print('Duration: {} seconds'.format(time.time() - start))
+```
+
+```python
+32765421.24
+Duration: 5.947547674179077 seconds
+```
+
+```python
+start = time.time()
+
+cost = np.sum(gift_costs[gift_costs < 25])
+total_price = cost * 1.08 # TODO: compute the total price
+
+print(total_price)
+print('Duration: {} seconds'.format(time.time() - start))
+```
+
+```python
+32765421.24
+Duration: 0.08053874969482422 seconds
+```
+
