@@ -80,3 +80,6 @@ for feature in df.columns[:-1]:
 
 ------
 
+### Efficient Code
+
+![Optimising](Images\Optimising.jpg)
