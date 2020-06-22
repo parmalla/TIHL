@@ -2,6 +2,8 @@
 
 ------
 
+[TOC]
+
 ### Software Engineering Practises
 
 #### Code Refactoring
