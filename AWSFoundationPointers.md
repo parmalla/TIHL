@@ -1,8 +1,28 @@
 ## AWS Machine Learning  Pointers
 
 ------
-
-[TOC]
+- [AWS Machine Learning  Pointers](#aws-machine-learning--pointers)
+  * [Software Engineering Practises](#software-engineering-practises)
+    
+    + [Code Refactoring](#code-refactoring)
+  * [Efficient Code](#efficient-code)
+  * [Convert string to int in numpy](#convert-string-to-int-in-numpy)
+  * [Optimising](#optimising)
+  * [Unit Testing Tools](#unit-testing-tools)
+  * [Test Driven Development and Data Science](#test-driven-development-and-data-science)
+  * [Code Review](#code-review)
+    + [Is the code clean and modular?](#is-the-code-clean-and-modular-)
+    + [Is the code efficient?](#is-the-code-efficient-)
+    + [Is documentation effective?](#is-documentation-effective-)
+    + [Is the code well tested?](#is-the-code-well-tested-)
+    + [Is the logging effective?](#is-the-logging-effective-)
+  * [Tips for Conducting a Code Review](#tips-for-conducting-a-code-review)
+    + [Tip: Use a code linter](#tip--use-a-code-linter)
+    + [Tip: Explain issues and make suggestions](#tip--explain-issues-and-make-suggestions)
+    + [Tip: Keep your comments objective](#tip--keep-your-comments-objective)
+    + [Tip: Provide code examples](#tip--provide-code-examples)
+    
+      
 
 ### Software Engineering Practises
 
@@ -80,13 +100,13 @@ for feature in df.columns[:-1]:
     print(df.groupby(feature).quality.mean(), '\n')
 ```
 
-------
+
 
 ### Efficient Code
 
 ![Optimising](/Images/Optimising.jpg)
 
-------
+
 
 ### Convert string to int in numpy
 
@@ -97,7 +117,7 @@ with open('gift_costs.txt') as f:
 gift_costs = np.array(gift_costs).astype(int)  # convert string to int
 ```
 
-------
+
 
 ### Optimising
 
@@ -135,7 +155,7 @@ print('Duration: {} seconds'.format(time.time() - start))
 Duration: 0.08053874969482422 seconds
 ```
 
-------
+
 
 ### Unit Testing Tools
 
@@ -151,7 +171,7 @@ In the test output, periods represent successful unit tests and F's represent fa
 
 Your tests won't be stopped by failed `assert` statements, but it will stop if you have syntax errors.
 
-------
+
 
 ### Test Driven Development and Data Science
 
@@ -166,7 +186,7 @@ Test driven development for data science is relatively new and has a lot of expe
 - [TDD is Essential for Good Data Science Here's Why](https://medium.com/@karijdempsey/test-driven-development-is-essential-for-good-data-science-heres-why-db7975a03a44)
 - [Testing Your Code](http://docs.python-guide.org/en/latest/writing/tests/) (general python TDD)
 
-------
+
 
 ### Code Review
 
