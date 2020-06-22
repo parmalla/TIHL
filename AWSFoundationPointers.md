@@ -1,7 +1,24 @@
 ## AWS Machine Learning  Pointers
 
-------
-
+- [AWS Machine Learning  Pointers](#aws-machine-learning--pointers)
+  * [Software Engineering Practises](#software-engineering-practises)
+    + [Code Refactoring](#code-refactoring)
+    + [Efficient Code](#efficient-code)
+    + [Convert string to int in numpy](#convert-string-to-int-in-numpy)
+    + [Optimising](#optimising)
+    + [Unit Testing Tools](#unit-testing-tools)
+    + [Test Driven Development and Data Science](#test-driven-development-and-data-science)
+    + [Code Review](#code-review)
+    + [Is the code clean and modular?](#is-the-code-clean-and-modular-)
+    + [Is the code efficient?](#is-the-code-efficient-)
+    + [Is documentation effective?](#is-documentation-effective-)
+    + [Is the code well tested?](#is-the-code-well-tested-)
+    + [Is the logging effective?](#is-the-logging-effective-)
+    + [Tips for Conducting a Code Review](#tips-for-conducting-a-code-review)
+    + [Tip: Use a code linter](#tip--use-a-code-linter)
+    + [Tip: Explain issues and make suggestions](#tip--explain-issues-and-make-suggestions)
+    + [Tip: Keep your comments objective](#tip--keep-your-comments-objective)
+    + [Tip: Provide code examples](#tip--provide-code-examples)
 ### Software Engineering Practises
 
 #### Code Refactoring
@@ -175,7 +192,7 @@ Code reviews benefit everyone in a team to promote best programming practices an
 
 Questions to Ask Yourself When Conducting a Code Review
 
-First, let's look over some of the questions we may ask ourselves while reviewing code. These are simply from the concepts we've covered in these last two lessons!
+First, let's look over some of the questions we may ask ourselves while reviewing code.
 
 > #### Is the code clean and modular?
 >
