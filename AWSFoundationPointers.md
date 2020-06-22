@@ -163,3 +163,12 @@ Test driven development for data science is relatively new and has a lot of expe
 - [TDD for Data Science](http://engineering.pivotal.io/post/test-driven-development-for-data-science/)
 - [TDD is Essential for Good Data Science Here's Why](https://medium.com/@karijdempsey/test-driven-development-is-essential-for-good-data-science-heres-why-db7975a03a44)
 - [Testing Your Code](http://docs.python-guide.org/en/latest/writing/tests/) (general python TDD)
+
+------
+
+### Code Review
+
+Code reviews benefit everyone in a team to promote best programming practices and prepare code for production. Let's go over what to look for in a code review and some tips on how to conduct one.
+
+- [Code Review](https://github.com/lyst/MakingLyst/tree/master/code-reviews)
+- [Code Review Best Practices](https://www.kevinlondon.com/2015/05/05/code-review-best-practices.html)
