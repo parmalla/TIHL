@@ -1,28 +1,6 @@
 ## AWS Machine Learning  Pointers
 
 ------
-- [AWS Machine Learning  Pointers](#aws-machine-learning--pointers)
-  * [Software Engineering Practises](#software-engineering-practises)
-    
-    + [Code Refactoring](#code-refactoring)
-  * [Efficient Code](#efficient-code)
-  * [Convert string to int in numpy](#convert-string-to-int-in-numpy)
-  * [Optimising](#optimising)
-  * [Unit Testing Tools](#unit-testing-tools)
-  * [Test Driven Development and Data Science](#test-driven-development-and-data-science)
-  * [Code Review](#code-review)
-    + [Is the code clean and modular?](#is-the-code-clean-and-modular-)
-    + [Is the code efficient?](#is-the-code-efficient-)
-    + [Is documentation effective?](#is-documentation-effective-)
-    + [Is the code well tested?](#is-the-code-well-tested-)
-    + [Is the logging effective?](#is-the-logging-effective-)
-  * [Tips for Conducting a Code Review](#tips-for-conducting-a-code-review)
-    + [Tip: Use a code linter](#tip--use-a-code-linter)
-    + [Tip: Explain issues and make suggestions](#tip--explain-issues-and-make-suggestions)
-    + [Tip: Keep your comments objective](#tip--keep-your-comments-objective)
-    + [Tip: Provide code examples](#tip--provide-code-examples)
-    
-      
 
 ### Software Engineering Practises
 
@@ -102,13 +80,13 @@ for feature in df.columns[:-1]:
 
 
 
-### Efficient Code
+#### Efficient Code
 
 ![Optimising](/Images/Optimising.jpg)
 
 
 
-### Convert string to int in numpy
+#### Convert string to int in numpy
 
 ```python
 with open('gift_costs.txt') as f:
@@ -119,7 +97,7 @@ gift_costs = np.array(gift_costs).astype(int)  # convert string to int
 
 
 
-### Optimising
+#### Optimising
 
 Reducing time through numpy condition selection.
 
@@ -157,7 +135,7 @@ Duration: 0.08053874969482422 seconds
 
 
 
-### Unit Testing Tools
+#### Unit Testing Tools
 
 To install `pytest`, run `pip install -U pytest` in your terminal. You can see more information on getting started [here](https://docs.pytest.org/en/latest/getting-started.html).
 
@@ -173,7 +151,7 @@ Your tests won't be stopped by failed `assert` statements, but it will stop if y
 
 
 
-### Test Driven Development and Data Science
+#### Test Driven Development and Data Science
 
 - **TEST DRIVEN DEVELOPMENT:** writing tests before you write the code that’s being tested. Your test would fail at first, and you’ll know you’ve finished implementing a task when this test passes.
 - Tests can check for all the different scenarios and edge cases you can think of, before even starting to write your function. This way, when you do start implementing your function, you can run this test to get immediate feedback on whether it works or not in all the ways you can think of, as you tweak your function.
@@ -188,7 +166,7 @@ Test driven development for data science is relatively new and has a lot of expe
 
 
 
-### Code Review
+#### Code Review
 
 Code reviews benefit everyone in a team to promote best programming practices and prepare code for production. Let's go over what to look for in a code review and some tips on how to conduct one.
 
@@ -235,7 +213,7 @@ First, let's look over some of the questions we may ask ourselves while reviewin
 > - Do they include all relevant and useful information?
 > - Do they use the appropriate logging level?
 
-### Tips for Conducting a Code Review
+#### Tips for Conducting a Code Review
 
 Now that we know what we are looking for, let's go over some tips on how to actually write your code review. When your coworker finishes up some code that they want to merge to the team's code base, they might send it to you for review. You provide feedback and suggestions, and then they may make changes and send it back to you. When you are happy with the code, you approve and it gets merged to the team's code base.
 
