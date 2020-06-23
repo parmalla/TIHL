@@ -308,10 +308,10 @@ df['first_name'], df['last_name'] = df['name'].str.split(' ', 1).str
 
 ##### probability density function
 
-![Normal Distribution](Images/Normal Distribution.jpg)
+![Normal Distribution](/Images/Normal Distribution.jpg)
 
 #### Binomial Distribution Formulas
 
 ##### probability density function
 
-![Binomial Distribution](Images/Binomial Distribution.jpg)
+![Binomial Distribution](/Images/Binomial Distribution.jpg)
