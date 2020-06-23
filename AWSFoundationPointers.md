@@ -308,32 +308,10 @@ df['first_name'], df['last_name'] = df['name'].str.split(' ', 1).str
 
 ##### probability density function
 
-f(x \space | \space \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}e^-\frac{(x-\mu)^2}{2\sigma^2}*f*(*x* ∣ **μ**,*σ*2)=2*π**σ*21*e*−2*σ*2(*x*−*μ*)2
-
-\begin{aligned} \\ \text{where:} \\ \mu& \space \text{is the mean} \\ \sigma& \space \text{ is the standard deviation} \\ \sigma&^2 \space \text{is the variance} \end{aligned}where:*μ**σ**σ* is the mean is the standard deviation2 is the variance
-
-
+![Normal Distribution](Images/Normal Distribution.jpg)
 
 #### Binomial Distribution Formulas
 
-##### mean
-
-\mu = n * p*μ*=*n*∗*p*
-
-In other words, a fair coin has a probability of a positive outcome (heads) p = 0.5. If you flip a coin 20 times, the mean would be 20 * 0.5 = 10; you'd expect to get 10 heads.
-
-##### variance
-
-\sigma^2 = n * p * (1 - p)*σ*2=*n*∗*p*∗(1−*p*)
-
-Continuing with the coin example, n would be the number of coin tosses and p would be the probability of getting heads.
-
-##### standard deviation
-
-\sigma = \sqrt{n * p * (1 - p)}*σ*=*n*∗*p*∗(1−*p*)
-
-or in other words, the standard deviation is the square root of the variance.
-
 ##### probability density function
 
-f(k, n, p) = \frac{n\footnotesize{!}}{k!(n - k)!}p^k(1-p)^{(n-k)}*f*(*k*,*n*,*p*)=*k*!(*n*−*k*)!*n*!*p**k*(1−*p*)(*n*−*k*)
+![Binomial Distribution](Images/Binomial Distribution.jpg)
