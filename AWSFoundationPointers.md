@@ -326,3 +326,4 @@ df['first_name'], df['last_name'] = df['name'].str.split(' ', 1).str
 ##### probability density function
 
 ![Binomial Distribution](/Images/Binomial_Distribution.jpg)
+
