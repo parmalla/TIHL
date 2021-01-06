@@ -18,3 +18,4 @@ X = imputer.transform(housing_num)
 housing_tr = pd.DataFrame(X, columns=housing_num.columns,
                         index=housing_num.index)
 ```
+[Link](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb#scrollTo=tm1NMvG_cWbR)
