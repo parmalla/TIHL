@@ -5,6 +5,7 @@
       - [1.1.2.1. Normal Encoding](#1121-normal-encoding)
       - [1.1.2.2. OneHot Encoding](#1122-onehot-encoding)
     - [1.1.3. Custom Transformers](#113-custom-transformers)
+    - [1.1.4. Transformation Pipelines](#114-transformation-pipelines)
 # 1. Chapter 2
 ## 1.1. Prepare the data for ML algorithms
 ### 1.1.1. Data Cleaning
@@ -69,3 +70,17 @@ attr_adder = CombinedAttributesAdder(add_bedrooms_per_room=False)
 housing_extra_attribs = attr_adder.transform(housing.values)
 ```
 [Link](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb#scrollTo=2Lc1Nm-VcWbW)
+### 1.1.4. Transformation Pipelines
+```Python
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+
+num_pipeline = Pipeline([
+        ('imputer', SimpleImputer(strategy="median")),
+        ('attribs_adder', CombinedAttributesAdder()),
+        ('std_scaler', StandardScaler()),
+    ])
+
+housing_num_tr = num_pipeline.fit_transform(housing_num)
+```
+[Link](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb#scrollTo=CdBnQPO8fMlY)
