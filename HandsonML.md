@@ -6,6 +6,8 @@
       - [1.1.2.2. OneHot Encoding](#1122-onehot-encoding)
     - [1.1.3. Custom Transformers](#113-custom-transformers)
     - [1.1.4. Transformation Pipelines](#114-transformation-pipelines)
+  - [1.2. Select and train a model](#12-select-and-train-a-model)
+    - [1.2.1. Training and Evaluating on the Training Set](#121-training-and-evaluating-on-the-training-set)
 # 1. Chapter 2
 ## 1.1. Prepare the data for ML algorithms
 ### 1.1.1. Data Cleaning
@@ -84,3 +86,41 @@ num_pipeline = Pipeline([
 housing_num_tr = num_pipeline.fit_transform(housing_num)
 ```
 [Link](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb#scrollTo=CdBnQPO8fMlY)
+## 1.2. Select and train a model
+### 1.2.1. Training and Evaluating on the Training Set
+```Python
+from sklearn.linear_model import LinearRegression
+
+lin_reg = LinearRegression()
+lin_reg.fit(housing_prepared, housing_labels)
+
+# let's try the full preprocessing pipeline on a few training instances
+some_data = housing.iloc[:5]
+some_labels = housing_labels.iloc[:5]
+some_data_prepared = full_pipeline.transform(some_data)
+
+print("Predictions:", lin_reg.predict(some_data_prepared))
+
+from sklearn.metrics import mean_squared_error
+
+housing_predictions = lin_reg.predict(housing_prepared)
+lin_mse = mean_squared_error(housing_labels, housing_predictions)
+lin_rmse = np.sqrt(lin_mse)
+lin_rmse
+
+from sklearn.metrics import mean_absolute_error
+
+lin_mae = mean_absolute_error(housing_labels, housing_predictions)
+lin_mae
+# new model
+from sklearn.tree import DecisionTreeRegressor
+
+tree_reg = DecisionTreeRegressor(random_state=42)
+tree_reg.fit(housing_prepared, housing_labels)
+
+housing_predictions = tree_reg.predict(housing_prepared)
+tree_mse = mean_squared_error(housing_labels, housing_predictions)
+tree_rmse = np.sqrt(tree_mse)
+tree_rmse
+```
+[Link](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb#scrollTo=JPpErlr_FDDD)
