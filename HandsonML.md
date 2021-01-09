@@ -11,7 +11,9 @@
     - [1.2.2. Better Evaluation Using Cross Validation](#122-better-evaluation-using-cross-validation)
   - [1.3. Fine Tune Your Model](#13-fine-tune-your-model)
     - [1.3.1. Grid Search](#131-grid-search)
-    - [Randomized Search](#randomized-search)
+    - [1.3.2. Randomized Search](#132-randomized-search)
+    - [1.3.3. Analyze the Best Models and Their Errors](#133-analyze-the-best-models-and-their-errors)
+    - [1.3.4. Evaluate Your System on the Test Set](#134-evaluate-your-system-on-the-test-set)
 # 1. Chapter 2
 ## 1.1. Prepare the data for ML algorithms
 ### 1.1.1. Data Cleaning
@@ -163,4 +165,52 @@ cvres = grid_search.cv_results_
 for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
     print(np.sqrt(-mean_score), params)
 ```
-### Randomized Search
+### 1.3.2. Randomized Search
+```Python
+from sklearn.model_selection import RandomizedSearchCV
+from scipy.stats import randint
+
+param_distribs = {
+        'n_estimators': randint(low=1, high=200),
+        'max_features': randint(low=1, high=8),
+    }
+
+forest_reg = RandomForestRegressor(random_state=42)
+rnd_search = RandomizedSearchCV(forest_reg, param_distributions=param_distribs,
+                                n_iter=10, cv=5, scoring='neg_mean_squared_error', random_state=42)
+rnd_search.fit(housing_prepared, housing_labels)
+```
+### 1.3.3. Analyze the Best Models and Their Errors
+```Python
+feature_importances = grid_search.best_estimator_.feature_importances_
+
+extra_attribs = ["rooms_per_hhold", "pop_per_hhold", "bedrooms_per_room"]
+#cat_encoder = cat_pipeline.named_steps["cat_encoder"] # old solution
+cat_encoder = full_pipeline.named_transformers_["cat"]
+cat_one_hot_attribs = list(cat_encoder.categories_[0])
+attributes = num_attribs + extra_attribs + cat_one_hot_attribs
+sorted(zip(feature_importances, attributes), reverse=True)
+```
+[Link](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb#scrollTo=7SV3qjXBFFub)
+### 1.3.4. Evaluate Your System on the Test Set
+```Python
+final_model = grid_search.best_estimator_
+
+X_test = strat_test_set.drop("median_house_value", axis=1)
+y_test = strat_test_set["median_house_value"].copy()
+
+X_test_prepared = full_pipeline.transform(X_test)
+final_predictions = final_model.predict(X_test_prepared)
+
+final_mse = mean_squared_error(y_test, final_predictions)
+final_rmse = np.sqrt(final_mse)
+
+# We can compute a 95% confidence interval for the test RMSE:
+from scipy import stats
+
+confidence = 0.95
+squared_errors = (final_predictions - y_test) ** 2
+np.sqrt(stats.t.interval(confidence, len(squared_errors) - 1,
+                         loc=squared_errors.mean(),
+                         scale=stats.sem(squared_errors)))
+```
