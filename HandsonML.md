@@ -90,6 +90,8 @@ num_pipeline = Pipeline([
 housing_num_tr = num_pipeline.fit_transform(housing_num)
 ```
 [Link](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb#scrollTo=CdBnQPO8fMlY)
+
+---
 ## 1.2. Select and train a model
 ### 1.2.1. Training and Evaluating on the Training Set
 ```Python
@@ -136,6 +138,7 @@ scores = cross_val_score(tree_reg, housing_prepared, housing_labels,
                          scoring="neg_mean_squared_error", cv=10)
 tree_rmse_scores = np.sqrt(-scores)
 ```
+---
 ## 1.3. Fine Tune Your Model
 ### 1.3.1. Grid Search
 ```Python
