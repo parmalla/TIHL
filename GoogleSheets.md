@@ -4,6 +4,7 @@
 - [4. Text wrapping and alignment](#4-text-wrapping-and-alignment)
 - [5. Tidy data](#5-tidy-data)
 - [6. Filters](#6-filters)
+- [7. Version Control](#7-version-control)
 
 # 1. Freeze Columns
 Freeze columns and rows to easily navigate around sheets easily
@@ -26,3 +27,8 @@ If a sheet is going to be exported for other packages, then tiding the data is a
 # 6. Filters
 Filters view can be used to create filters and come back to original data
 ![FilterView](https://i.imgur.com/YsN3e7y.gif)
+
+# 7. Version Control
+Sheets has built in version control under 'Files' category
+![Version](https://i.imgur.com/hDArlZt.gif)
+
